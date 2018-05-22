@@ -50,16 +50,16 @@ for counter in 1...countOfExpectedSpecsThatWillBeProvided {
     }
     
     let splitInput = givenInput.split(separator: " ")
-    let computerName = splitInput[0]
-    let computerRAM = splitInput[1]
-    let computerCPU = splitInput[2]
-    let computerDiskSpace = splitInput[3]
+    let computerName = String(splitInput[0])
+    let computerRAM = Int(splitInput[1])
+    let computerCPU = Int(splitInput[2])
+    let computerDiskSpace = Int(splitInput[3])
+    
+    let specResult = 2 * computerRAM! + 3 * computerCPU! + computerDiskSpace!
     
     
-    
-    
-    if Int(computerRAM) * 2 + Int(computerCPU) * 3 + Int(computerDiskSpace) > bestComputerSpec {
-        bestComputerSpec = Int(computerRAM) * 2 + Int(computerCPU) * 3 + Int(computerDiskSpace)
+    if specResult > bestComputerSpec {
+        bestComputerSpec = specResult
      bestComputerName = computerName
     }
     
